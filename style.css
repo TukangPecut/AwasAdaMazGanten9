@@ -1,0 +1,212 @@
+/* Reset Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+}
+
+/* Header (Flexbox) */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fbfbf9;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+/* Layout Split Screen (Flexbox) */
+.builder-container {
+    display: flex;
+    flex: 1; /* Mengisi sisa tinggi layar */
+    overflow: hidden;
+}
+
+/* Area Kiri: Kanvas */
+.canvas-section {
+    flex: 6; /* Mengambil 60% lebar */
+    background-color: #f4f4f0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.bouquet-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.empty-state {
+    color: #888;
+    font-style: italic;
+}
+
+/* Pilihan Pembungkus */
+.wrapper-selector {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.wrapper-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.wrap-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.wrap-btn.active {
+    border-color: #333;
+    background: #eaeaea;
+}
+
+/* Area Kanan: Panel (Flexbox Kolom) */
+.panel-section {
+    flex: 4; /* Mengambil 40% lebar */
+    background-color: #2c2a29; /* Warna gelap agar kontras */
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-tabs {
+    display: flex;
+    border-bottom: 1px solid #444;
+}
+
+.tab {
+    flex: 1;
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+}
+.tab.active {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+/* Grid Produk (CSS Grid) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Kolom */
+    gap: 1rem;
+    padding: 1rem;
+    overflow-y: auto; /* Bisa di-scroll */
+    flex: 1;
+}
+
+.card {
+    background-color: #3a3837;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    background: #2c2a29;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.controls button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.controls button:hover { background: #444; }
+
+/* Ringkasan Pesanan */
+.order-summary {
+    background-color: #1f1d1c;
+    padding: 1.5rem;
+    border-top: 1px solid #444;
+}
+
+.cart-list {
+    list-style: none;
+    margin: 1rem 0;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.cart-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.btn-primary { background: #d4af37; color: #111; } /* Warna Emas */
+.btn-secondary { background: transparent; border: 1px solid #d4af37; color: #d4af37; }

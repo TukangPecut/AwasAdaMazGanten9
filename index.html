@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petals & Co. - Custom Bouquet Builder</title>
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header menggunakan Flexbox -->
+    <header class="top-nav">
+        <div class="logo">PETALS & CO.</div>
+        <div class="nav-actions">
+            <button class="btn-outline">Cara Kerja</button>
+            <button class="btn-outline" onclick="resetCanvas()">Mulai Ulang</button>
+        </div>
+    </header>
+
+    <!-- Layout Utama menggunakan Flexbox (Split Screen) -->
+    <main class="builder-container">
+        
+        <!-- Kiri: Kanvas Visual (60%) -->
+        <section class="canvas-section">
+            <div class="canvas-header">
+                <h2>Custom Bouquet Builder</h2>
+                <p>Kanvas Virtual</p>
+            </div>
+            
+            <!-- Tempat bunga akan ditumpuk -->
+            <div id="bouquet-canvas" class="bouquet-area">
+                <p class="empty-state">Pilih bunga di panel kanan untuk mulai merangkai.</p>
+            </div>
+
+            <!-- Pilihan Kertas Pembungkus -->
+            <div class="wrapper-selector">
+                <h3>Pilih Pembungkus</h3>
+                <div class="wrapper-options">
+                    <button class="wrap-btn active">Kertas Coklat</button>
+                    <button class="wrap-btn">Kain Linen</button>
+                    <button class="wrap-btn">Jaring (Mesh)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kanan: Panel Pilihan (40%) -->
+        <section class="panel-section">
+            <nav class="panel-tabs">
+                <button class="tab active">Bunga Utama</button>
+                <button class="tab">Bunga Pendamping</button>
+                <button class="tab">Daun</button>
+            </nav>
+
+            <!-- Grid Katalog Produk menggunakan CSS Grid -->
+            <div id="product-grid" class="product-grid">
+                <!-- Produk akan di-render dari JavaScript -->
+            </div>
+
+            <!-- Ringkasan Pesanan -->
+            <div class="order-summary">
+                <h3>Resep Buket Saat Ini</h3>
+                <ul id="cart-items" class="cart-list">
+                    <!-- Item keranjang akan muncul di sini -->
+                </ul>
+                
+                <div class="total-area">
+                    <div class="total-price">
+                        <span>Estimasi Total:</span>
+                        <span id="total-price">$0.00</span>
+                    </div>
+                    <button class="btn-primary">Review & Simpan</button>
+                    <button class="btn-secondary">Masukkan Keranjang</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Menghubungkan file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
